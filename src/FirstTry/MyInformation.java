@@ -1,3 +1,4 @@
+package FirstTry;
 
 public class MyInformation {
 	public static void main(String args[]) {

@@ -1,3 +1,4 @@
+package FirstTry;
 
 public class NarcissisticNumber {
 	public static void main(String args[]) {
