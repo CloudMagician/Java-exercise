@@ -2,6 +2,7 @@ package ComputeTime;
 
 public class ComputeTime {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String args[]) {
 		Common temp = null;
 		int A = 0;

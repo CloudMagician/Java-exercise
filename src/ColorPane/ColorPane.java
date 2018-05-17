@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.Color;
 
 public class ColorPane extends JFrame implements ActionListener {
+	private static final long serialVersionUID = 1L;
 	private JButton buttons[];
 	private String names[] = {"blue","cyan","green",
 			"magenta","orange","pink","red","white","yellow"};
