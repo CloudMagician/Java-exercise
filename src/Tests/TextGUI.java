@@ -9,14 +9,15 @@ public class TextGUI extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Container container;
-	private JLabel slabel;
-	private JLabel tlabel;
-	private JTextField stextfield;
-	private JTextField ttextfield;
-	private JButton clear;
-	private JButton copy;
-	private JButton close;
+	
+	private Container container;	
+	private JLabel slabel = new JLabel("Source");
+	private JLabel tlabel = new JLabel("Target");
+	private JTextField stextfield = new JTextField(20);
+	private JTextField ttextfield = new JTextField(20);
+	private JButton clear = new JButton("Clear");
+	private JButton copy  = new JButton("Copy");
+	private JButton close = new JButton("Close");
 	
 	private class AL implements ActionListener {
 		@Override
@@ -39,14 +40,6 @@ public class TextGUI extends JFrame {
 		
 		container = getContentPane();
 		container.setLayout(new FlowLayout());
-		
-		slabel = new JLabel("Source");
-		tlabel = new JLabel("Target");
-		stextfield = new JTextField(20);
-		ttextfield = new JTextField(20);
-		clear = new JButton("Clear");
-		copy  = new JButton("Copy");
-		close = new JButton("Close");
 		
 		clear.addActionListener(new AL());
 		copy.addActionListener(new AL());

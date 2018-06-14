@@ -10,12 +10,8 @@ public final class ReadWorker {
 		int salary;
 	}
 	
-	private List<Worker> list;
+	private List<Worker> list= new LinkedList<Worker>();
 	private static Scanner s;
-	
-	public ReadWorker() {	
-		list = new LinkedList<Worker>();
-	}
 	
 	public List<Worker> readFromFile(File file) throws IOException{
 		BufferedReader in = new BufferedReader(new FileReader(file));

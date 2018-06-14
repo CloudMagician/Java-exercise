@@ -25,40 +25,35 @@ public final class PerformanceManagement {
 	}
 	
 	public Integer totalScore(Integer turn) {
-		HashMap.Entry<String, Integer> tempentry;
 		Integer sum = 0;
 		HashMap<String,Integer> temp = link.get(turn-1);
 		Set<HashMap.Entry<String, Integer>> set = temp.entrySet(); 
 		for (Iterator<HashMap.Entry<String, Integer>> it = set.iterator(); 
 				it.hasNext();) {
-			tempentry = it.next();
+			HashMap.Entry<String, Integer> tempentry = it.next();
 			sum += tempentry.getValue();
 		}
 		return sum;
 	}
 	
 	public Integer studentTotalScore(String name) {
-		HashMap<String,Integer> temp;
 		Integer sum = 0;
 		for (Iterator<HashMap<String,Integer>> it = link.iterator(); 
 				it.hasNext();) {
-			temp = it.next();
+			HashMap<String,Integer> temp = it.next();
 			sum += temp.get(name);
 		}
 		return sum;
 	}
 	
 	public Integer studentAverageScore(String name) {
-		HashMap<String,Integer> temp;
 		Integer sum = 0;
-		Integer turn = 0;
 		for (Iterator<HashMap<String,Integer>> it = link.iterator(); 
 				it.hasNext();) {
-			temp = it.next();
+			HashMap<String,Integer> temp = it.next();
 			sum += temp.get(name);
-			turn ++;
 		}
-		return sum/turn;
+		return sum/link.size();
 	}
 	
 	public static void main(String[] args) {

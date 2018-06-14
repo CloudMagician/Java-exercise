@@ -10,7 +10,6 @@ public final class TestGUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Container container;
-	private BorderLayout border;
 	private JButton b1;
 	private JButton b2;
 	private JButton b3;
@@ -35,9 +34,8 @@ public final class TestGUI extends JFrame {
 	public TestGUI() {
 		super("TestGUI");
 		
-		border = new BorderLayout(5,5);
 		container = getContentPane();
-		container.setLayout(border);
+		container.setLayout(new BorderLayout(5,5));
 		b1 = new JButton("北区");
 		b2 = new JButton("南区");
 		b3 = new JButton("西区");

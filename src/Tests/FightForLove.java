@@ -27,7 +27,7 @@ public final class FightForLove {
 		Yongshi gy = new Yongshi("关羽");
 		Yongshi zf = new Yongshi("张飞");
 		Thread gyt = new Thread(gy);
-		Thread zft = new Thread(zf,"张飞");
+		Thread zft = new Thread(zf);
 		gyt.start();
 		zft.start();
 		
@@ -35,9 +35,9 @@ public final class FightForLove {
 			
 		}
 		
-		if (gy.time==zf.time) {
+		if (gy.time == zf.time) {
 			System.out.print("平局"+"\n");
-		} else if (gy.time <zf.time) {
+		} else if (gy.time < zf.time) {
 			System.out.print(gy.name+"赢得美人归!"+"\n");
 		} else {
 			System.out.print(zf.name+"赢得美人归!"+"\n");
