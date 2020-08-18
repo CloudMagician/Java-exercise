@@ -1,3 +1,5 @@
+package CSP;
+
 import java.util.*;
 
 class IPpref {
@@ -9,27 +11,27 @@ class IPpref {
 	}
 }
 
-public class Main {
+public class CIDRMerge {
 
 	public static void main(String[] args) {
 		
 		Scanner reader=new Scanner(System.in);
 		int n=Integer.parseInt(reader.nextLine());
-		List<IPpref> a=new ArrayList<IPpref>(); 
+		List<IPpref> a = new ArrayList<>(Collections.unmodifiableList(new ArrayList<>()));
 		for(int d=0;d<n;d++) {
 			
 			String ip=reader.nextLine();
 			
 			long Ip=0;   //实际ip值
-			int len=0;   //掩码长度
-			int j=1;
+			int len;   //掩码长度
+			int j;
 			int index=ip.indexOf("/");
 			if(index!=-1) {
 				
 				String[] b= ip.split("/");
 				len=Integer.parseInt(b[1]);
 				String str= b[0];
-				if(str.indexOf(".")!=-1) b=str.split("\\.");
+				if(str.contains(".")) b=str.split("\\.");
 				else b=new String[] {str};
 				
 				j=1<<(8*(4-b.length));
@@ -39,7 +41,7 @@ public class Main {
 				}
 			}else {
 				String[] b= new String[]{ip};
-				if(ip.indexOf(".")!=-1) b=ip.split("\\.");
+				if(ip.contains(".")) b=ip.split("\\.");
 				j=1<<(8*(4-b.length));
 				len=b.length*8;
 				for(int i=b.length-1;i>=0;i--) {
@@ -111,7 +113,7 @@ public class Main {
 		
 		reader.close();
 		long s,a0,a1,a2,a3;
-		String str="";
+		String str;
 		for(IPpref ip:a) {
 			s=ip.ip>>8;
 			a0=ip.ip%256;
